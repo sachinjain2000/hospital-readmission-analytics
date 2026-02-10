@@ -8,19 +8,21 @@
 
 ---
 
-## 📖 The Story: Solving the Readmission Riddle
+## 📖 Project Motivation
 
-It was my first week as a Junior Data Analyst at **HealthCare Heroes Hospital**, a leading medical institution known for its commitment to patient care. I was eager to apply my skills to real world problems. My manager, the Head of Hospital Operations, called me into her office.
+As a data analytics graduate, I've always been fascinated by how data can solve real world problems that impact people's lives. While researching high impact domains for my portfolio, I discovered that **hospital readmissions** are one of the most critical challenges in healthcare today.
 
-> "Welcome aboard," she said, her expression serious. "We have a critical problem that needs a fresh pair of eyes. Our 30 day patient readmission rates are climbing, and it's affecting both our patient outcomes and our bottom line. We're facing millions in Medicare penalties. I need you to become our data detective, dig into our patient records, and solve this **Readmission Riddle**."
+The statistics were striking: nearly 20% of Medicare patients are readmitted within 30 days of discharge, costing the U.S. healthcare system over **$26 billion annually**. Beyond the financial burden, readmissions often indicate gaps in care quality, discharge planning, or patient support that directly affect patient wellbeing.
 
-This was it. My first major project. The goal was clear: **use data to understand why patients were returning to the hospital and build a system to predict who was most at risk.**
+I learned about this problem through healthcare industry reports and discovered a comprehensive dataset from a **10 year study conducted across 130 U.S. hospitals** (1999 to 2008), made publicly available by the UCI Machine Learning Repository for research purposes. This dataset, containing over 100,000 patient encounters, presented the perfect opportunity to apply my analytical skills to a meaningful healthcare challenge.
+
+**My goal was clear:** analyze this real world dataset to identify the key factors driving readmissions and build predictive models that could help healthcare providers intervene proactively.
 
 ---
 
 ## 🎯 Project Overview
 
-This project analyzes **101,766 patient records** from 130 U.S. hospitals over a 10 year period (1999-2008) to predict hospital readmissions within 30 days of discharge. Using machine learning and statistical analysis, I identified the key risk factors and built predictive models to enable proactive interventions.
+This project analyzes **101,766 patient records** from 130 U.S. hospitals to predict hospital readmissions within 30 days of discharge. Using machine learning and statistical analysis, I identified the key risk factors and built predictive models to enable proactive interventions.
 
 ### Key Achievements
 
@@ -28,7 +30,7 @@ This project analyzes **101,766 patient records** from 130 U.S. hospitals over a
 - 🤖 Built 3 machine learning models (Logistic Regression, Random Forest, Gradient Boosting)
 - 🎯 Achieved 88.9% accuracy and 0.680 ROC AUC score
 - 💡 Identified top 5 risk factors for readmission
-- 💰 Estimated $5.2M in potential annual savings
+- 💰 Estimated $5.2M in potential annual savings for a typical hospital
 
 ---
 
@@ -44,7 +46,7 @@ The dataset revealed that **11.2% of patients** were readmitted within 30 days, 
 
 ### 2. Patient Demographics
 
-The majority of patients were in the 70-80 age group, with females representing a slightly higher proportion. Understanding demographic patterns helps tailor interventions.
+The majority of patients were in the 70 to 80 age group, with females representing a slightly higher proportion. Understanding demographic patterns helps tailor interventions.
 
 ![Patient Demographics](visualizations/03_demographics.png)
 
@@ -73,11 +75,11 @@ Feature importance analysis revealed the most critical predictors of readmission
 ![Feature Importance](visualizations/06_feature_importance.png)
 
 **Top 5 Risk Factors:**
-1. **Number of Prior Inpatient Visits** (16% importance) - Patients with previous hospitalizations are at highest risk
-2. **Discharge Disposition** (12% importance) - Where patients go after discharge is critical
-3. **Total Healthcare Visits** (10% importance) - High utilization indicates complex needs
-4. **Number of Lab Procedures** (9% importance) - More tests suggest severe conditions
-5. **Number of Medications** (8% importance) - Polypharmacy increases risk of errors
+1. **Number of Prior Inpatient Visits** (16% importance) – Patients with previous hospitalizations are at highest risk
+2. **Discharge Disposition** (12% importance) – Where patients go after discharge is critical
+3. **Total Healthcare Visits** (10% importance) – High utilization indicates complex needs
+4. **Number of Lab Procedures** (9% importance) – More tests suggest severe conditions
+5. **Number of Medications** (8% importance) – Polypharmacy increases risk of errors
 
 ---
 
@@ -127,7 +129,7 @@ Patients with emergency visits in the past year are more likely to be readmitted
 
 ## 🎯 Business Recommendations
 
-Based on the data analysis and predictive modeling, I proposed a strategic plan to reduce readmissions:
+Based on the data analysis and predictive modeling, I developed a strategic framework to reduce readmissions:
 
 ### 1. 🎯 Implement Risk Stratification System
 Deploy the Gradient Boosting model to generate a readmission risk score for every patient upon discharge. Integrate this score into the electronic health record (EHR) system to automatically flag high risk patients.
@@ -142,7 +144,7 @@ Establish mandatory 48 hour follow up calls for all high risk patients. Schedule
 Create a specialized pharmacy consultation service for patients on 5+ medications. Provide pill organizers, medication calendars, and automated refill reminders.
 
 ### 5. 💰 Financial Impact
-Reducing readmissions by 20% through these interventions could save approximately **$5.2 million annually**, based on an average readmission cost of $15,000 per patient.
+Reducing readmissions by 20% through these interventions could save approximately **$5.2 million annually** for a typical hospital, based on an average readmission cost of $15,000 per patient.
 
 ---
 
@@ -159,7 +161,9 @@ Reducing readmissions by 20% through these interventions could save approximatel
 
 ### Dataset
 
-- **Source:** [Diabetes 130-US hospitals for years 1999-2008](https://archive.ics.uci.edu/ml/datasets/diabetes)
+- **Source:** [Diabetes 130 US hospitals for years 1999 to 2008 Dataset](https://archive.ics.uci.edu/ml/datasets/diabetes) (UCI Machine Learning Repository)
+- **Study Period:** 10 years (1999 to 2008)
+- **Hospitals:** 130 U.S. hospitals
 - **Size:** 101,766 patient encounters
 - **Features:** 50 variables including demographics, diagnoses, medications, procedures, and outcomes
 - **Target Variable:** Readmission within 30 days (binary classification)
@@ -198,7 +202,7 @@ Python 3.11 or higher
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/[your-username]/hospital-readmission-analytics.git
+git clone https://github.com/sachinjain2000/hospital-readmission-analytics.git
 cd hospital-readmission-analytics
 ```
 
@@ -259,14 +263,14 @@ This project showcases essential skills for data analyst and business analyst ro
 
 For more detailed information, please refer to:
 
-- **[PROJECT_DOCUMENTATION.md](docs/PROJECT_DOCUMENTATION.md)** - Complete technical documentation
-- **[SKILLS_DEMONSTRATED.md](docs/SKILLS_DEMONSTRATED.md)** - Detailed skills breakdown for recruiters
+- **[PROJECT_DOCUMENTATION.md](docs/PROJECT_DOCUMENTATION.md)** – Complete technical documentation
+- **[SKILLS_DEMONSTRATED.md](docs/SKILLS_DEMONSTRATED.md)** – Detailed skills breakdown
 
 ---
 
 ## 🎓 What I Learned
 
-This project taught me the true power of data analytics. It's not just about code and algorithms; it's about **telling a story, solving problems, and making a real world impact.** 
+This project taught me the true power of data analytics. It's not just about code and algorithms; it's about **solving problems and creating actionable insights** that can improve lives.
 
 Key takeaways:
 - How to translate a business problem into an analytical question
@@ -294,22 +298,22 @@ Data/Business Analyst Graduate
 
 - 📧 Email: [your.email@example.com]
 - 💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- 🐙 GitHub: [github.com/yourusername](https://github.com/yourusername)
+- 🐙 GitHub: [github.com/sachinjain2000](https://github.com/sachinjain2000)
 - 🌐 Portfolio: [yourportfolio.com](https://yourportfolio.com)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Dataset:** UCI Machine Learning Repository
-- **Inspiration:** Real world healthcare analytics challenges
+- **Dataset:** UCI Machine Learning Repository – Diabetes 130 US hospitals dataset
 - **Tools:** Python, pandas, scikit-learn, matplotlib, seaborn
+- **Inspiration:** Real world healthcare analytics challenges and industry research
 
 ---
 
@@ -317,4 +321,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-*This project demonstrates end to end data analytics capabilities, from problem definition to actionable business recommendations. It showcases the ability to work with messy real world data, build predictive models, and communicate insights effectively.*
+*This project demonstrates end to end data analytics capabilities, from problem definition to actionable business recommendations. It showcases the ability to work with real world data, build predictive models, and communicate insights effectively.*
