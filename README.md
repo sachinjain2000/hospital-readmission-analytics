@@ -4,7 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-orange.svg)](https://scikit-learn.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 ---
 
@@ -291,24 +291,6 @@ Key takeaways:
 
 ---
 
-## 📞 Contact
-
-**[Your Name]**  
-Data/Business Analyst Graduate
-
-- 📧 Email: [your.email@example.com]
-- 💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- 🐙 GitHub: [github.com/sachinjain2000](https://github.com/sachinjain2000)
-- 🌐 Portfolio: [yourportfolio.com](https://yourportfolio.com)
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 🙏 Acknowledgments
 
 - **Dataset:** UCI Machine Learning Repository – Diabetes 130 US hospitals dataset
@@ -318,7 +300,3 @@ This project is licensed under the MIT License.
 ---
 
 **⭐ If you found this project helpful, please consider giving it a star!**
-
----
-
-*This project demonstrates end to end data analytics capabilities, from problem definition to actionable business recommendations. It showcases the ability to work with real world data, build predictive models, and communicate insights effectively.*
