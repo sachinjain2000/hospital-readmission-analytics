@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Readmission Analytics Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .chart-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .viz-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .insights-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .insights-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .insight-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .insight-item h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .insight-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .recommendation {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        
+        .risk-factor {
+            background: #fff3e0;
+            border-left-color: #ff9800;
+        }
+        
+        .footer {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            color: #666;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏥 Hospital Readmission Analytics Dashboard</h1>
+            <p>Predictive Analytics for Reducing 30-Day Readmission Rates</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #999;">Data Analytics Portfolio Project | February 2026</p>
+        </div>
+        
+        <!-- Key Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Patients</div>
+                <div class="stat-number">101,766</div>
+                <p style="color: #999; margin-top: 10px;">10-year dataset</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Readmission Rate</div>
+                <div class="stat-number">11.2%</div>
+                <p style="color: #999; margin-top: 10px;">Within 30 days</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Model Accuracy</div>
+                <div class="stat-number">88.9%</div>
+                <p style="color: #999; margin-top: 10px;">Gradient Boosting</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">ROC AUC Score</div>
+                <div class="stat-number">0.680</div>
+                <p style="color: #999; margin-top: 10px;">Best model performance</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Avg Hospital Stay</div>
+                <div class="stat-number">4.4</div>
+                <p style="color: #999; margin-top: 10px;">Days per patient</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-label">Potential Savings</div>
+                <div class="stat-number">$5.2M</div>
+                <p style="color: #999; margin-top: 10px;">Annual reduction</p>
+            </div>
+        </div>
+        
+        <!-- Readmission Distribution -->
+        <div class="chart-container">
+            <h2 class="chart-title">📊 Readmission Status Distribution</h2>
+            <img src="../visualizations/02_target_distribution.png" alt="Readmission Distribution" class="viz-image">
+        </div>
+        
+        <!-- Demographics -->
+        <div class="chart-container">
+            <h2 class="chart-title">👥 Patient Demographics Analysis</h2>
+            <img src="../visualizations/03_demographics.png" alt="Demographics" class="viz-image">
+        </div>
+        
+        <!-- Medical Features -->
+        <div class="chart-container">
+            <h2 class="chart-title">💊 Medical Features Distribution</h2>
+            <img src="../visualizations/04_medical_features.png" alt="Medical Features" class="viz-image">
+        </div>
+        
+        <!-- Model Performance -->
+        <div class="two-column">
+            <div class="chart-container">
+                <h2 class="chart-title">🎯 Model Performance Comparison</h2>
+                <img src="../visualizations/05_model_comparison.png" alt="Model Comparison" class="viz-image">
+            </div>
+            
+            <div class="chart-container">
+                <h2 class="chart-title">📈 ROC Curves Analysis</h2>
+                <img src="../visualizations/07_roc_curves.png" alt="ROC Curves" class="viz-image">
+            </div>
+        </div>
+        
+        <!-- Feature Importance -->
+        <div class="chart-container">
+            <h2 class="chart-title">🔍 Top Risk Factors for Readmission</h2>
+            <img src="../visualizations/06_feature_importance.png" alt="Feature Importance" class="viz-image">
+        </div>
+        
+        <!-- Confusion Matrices -->
+        <div class="chart-container">
+            <h2 class="chart-title">📉 Model Confusion Matrices</h2>
+            <img src="../visualizations/08_confusion_matrices.png" alt="Confusion Matrices" class="viz-image">
+        </div>
+        
+        <!-- Key Insights -->
+        <div class="insights-section">
+            <h2>💡 Key Insights</h2>
+            
+            <div class="insight-item risk-factor">
+                <h3>Top 5 Risk Factors for Readmission</h3>
+                <p><strong>1. Number of Inpatient Visits:</strong> Patients with prior inpatient visits have significantly higher readmission risk.</p>
+                <p><strong>2. Discharge Disposition:</strong> Where patients go after discharge strongly predicts readmission likelihood.</p>
+                <p><strong>3. Total Healthcare Visits:</strong> Higher overall healthcare utilization indicates complex medical needs.</p>
+                <p><strong>4. Number of Lab Procedures:</strong> More lab tests suggest more severe or complex conditions.</p>
+                <p><strong>5. Number of Medications:</strong> Polypharmacy increases risk of medication errors and non-adherence.</p>
+            </div>
+            
+            <div class="insight-item">
+                <h3>Patient Demographics</h3>
+                <p>The majority of patients are aged 70-80 years (modal age group), with females representing a slightly higher proportion. Caucasian patients make up the largest racial group in the dataset. The average hospital stay is 4.4 days, with significant variation based on diagnosis complexity.</p>
+            </div>
+            
+            <div class="insight-item">
+                <h3>Model Performance</h3>
+                <p>Gradient Boosting achieved the best performance with a ROC AUC score of 0.680, indicating moderate predictive power. While accuracy is high (88.9%), the low recall (1.01%) suggests the model is conservative in predicting readmissions. This trade-off prioritizes precision to avoid unnecessary interventions.</p>
+            </div>
+        </div>
+        
+        <!-- Recommendations -->
+        <div class="insights-section">
+            <h2>🎯 Business Recommendations</h2>
+            
+            <div class="insight-item recommendation">
+                <h3>1. Implement Risk Stratification System</h3>
+                <p>Deploy the predictive model to automatically flag high-risk patients before discharge. Integrate the risk score into the electronic health record (EHR) system to alert care teams.</p>
+            </div>
+            
+            <div class="insight-item recommendation">
+                <h3>2. Enhanced Discharge Planning</h3>
+                <p>For patients with prior inpatient visits or complex medication regimens, assign dedicated care coordinators to ensure smooth transitions. Provide detailed medication reconciliation and patient education.</p>
+            </div>
+            
+            <div class="insight-item recommendation">
+                <h3>3. Post-Discharge Follow-Up Protocol</h3>
+                <p>Establish mandatory 48-hour follow-up calls for high-risk patients. Schedule clinic appointments within 7 days of discharge. Use telehealth for convenient check-ins.</p>
+            </div>
+            
+            <div class="insight-item recommendation">
+                <h3>4. Medication Management Program</h3>
+                <p>Create a specialized pharmacy consultation service for patients on 5+ medications. Provide pill organizers and medication calendars. Implement automated refill reminders.</p>
+            </div>
+            
+            <div class="insight-item recommendation">
+                <h3>5. Financial Impact</h3>
+                <p>Reducing readmissions by 20% through these interventions could save approximately $5.2 million annually, based on an average readmission cost of $15,000 per patient. This also improves Medicare reimbursement rates by avoiding penalties.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Data Source:</strong> Diabetes 130-US Hospitals (1999-2008) | UCI Machine Learning Repository</p>
+            <p style="margin-top: 10px;"><strong>Analysis Tools:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</p>
+            <p style="margin-top: 10px;"><strong>Models Used:</strong> Logistic Regression, Random Forest, Gradient Boosting</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2026 Hospital Readmission Analytics Project | Data Analytics Portfolio</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+*.log
+.DS_Store
+exploration_output.txt
+modeling_output.txt
